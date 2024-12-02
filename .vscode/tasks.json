@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\karri pavan kalyan\\workspace\\bytes\\CucumberApibuildEnvironmentApiTest",
+			"script": "buildEnvironment",
+			"description": "Displays all buildscript dependencies declared in root project 'ApiTest'.",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"project": "ApiTest",
+			"buildFile": "C:\\Users\\karri pavan kalyan\\workspace\\bytes\\CucumberApi\\build.gradle",
+			"rootProject": "ApiTest",
+			"projectFolder": "c:\\Users\\karri pavan kalyan\\workspace\\bytes\\CucumberApi",
+			"workspaceFolder": "c:\\Users\\karri pavan kalyan\\workspace\\bytes\\CucumberApi",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: buildEnvironment"
+		}
+	]
+}

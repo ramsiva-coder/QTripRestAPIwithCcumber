@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test Login Functionality" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-02T09:12:08" hostname="KALYANI" time="19.217">
+  <properties/>
+  <testcase name="Successfull Login" classname="Test Login Functionality" time="16.452"/>
+  <testcase name="Login with Unregistered User" classname="Test Login Functionality" time="2.714"/>
+  <system-out><![CDATA[
+Scenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:4
+  Given Enter Username and Password          # cucumberapi.stepDefinitions.Steps.enter_username_and_password()
+  When Send Post Request with Valid Endpoint # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
+  Then Validate Statucode Should be 201      # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpdmEyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzEzMDc0MiwiZXhwIjoxNzMzMTUyMzQyfQ.MqqXjJcJtLS7XklITVkmubeh4CKjAl7wctIrDpdQf24
+  And Get the Token details                  # cucumberapi.stepDefinitions.Steps.get_the_token_details()
+
+Scenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:10
+  Given Enter Unregistered Username and Password # cucumberapi.stepDefinitions.Steps.enter_unregistered_username_and_password(io.cucumber.datatable.DataTable)
+    | email            | password |
+    | kal235@gmail.com | Test@123 |
+  When Send Post Request with Valid Endpoint     # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
+  Then Validate Statucode Should be 404          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
+{"success":false,"message":"email does not exist"}
+false
+  And Validate Response Body                     # cucumberapi.stepDefinitions.Steps.validate_response_body()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
