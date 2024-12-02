@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Default package</title>
+<title>Test results - Class Test Cities displayed on Search</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Default package</h1>
+<h1>Class Test Cities displayed on Search</h1>
 <div class="breadcrumbs">
-<a href="../index.html">all</a> &gt; default-package</div>
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Test Cities displayed on Search</div>
 <div id="summary">
 <table>
 <tr>
@@ -22,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -40,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">11.959s</div>
+<div class="counter">3.692s</div>
 <p>duration</p>
 </div>
 </td>
@@ -60,53 +61,42 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Classes</a>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Classes</h2>
+<h2>Tests</h2>
 <table>
 <thead>
 <tr>
-<th>Class</th>
-<th>Tests</th>
-<th>Failures</th>
-<th>Ignored</th>
+<th>Test</th>
 <th>Duration</th>
-<th>Success rate</th>
+<th>Result</th>
 </tr>
 </thead>
 <tr>
-<td class="success">
-<a href="../classes/Test%2320Cities%2320displayed%2320on%2320Search.html">Test Cities displayed on Search</a>
-</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3.692s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="../classes/Test%2320Login%2320Functionality.html">Test Login Functionality</a>
-</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>4.471s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="../classes/User%2320Registration.html">User Registration</a>
-</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>3.796s</td>
-<td class="success">100%</td>
+<td class="success">Test correct cities are displayed</td>
+<td class="success">3.692s</td>
+<td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+Scenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:4
+  Given Setup Base URl                      # cucumberapi.stepDefinitions.Steps.setup_base_u_rl()
+  When Send the Get request with endpoint   # cucumberapi.stepDefinitions.Steps.send_the_get_request_with_endpoint()
+200
+  Then Validate Response Statucode          # cucumberapi.stepDefinitions.Steps.validate_response_statucode()
+City is Bengaluru and description is 100+ Places
+  And Validate Response body details        # cucumberapi.stepDefinitions.Steps.validate_response_body_details()
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">

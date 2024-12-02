@@ -5,9 +5,6 @@ import java.util.Map;
 
 import org.json.JSONObject;
 import org.junit.Assert;
-import org.junit.runner.Request;
-
-import com.google.gson.JsonObject;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -118,7 +115,7 @@ public class Steps {
 
 // =======================QTRIP APPLICATION END TO END TESTING=================
 
-
+//=====================Registation QTrip==================================
 
 @Given("Valid Username and Password")
 public void valid_username_and_password() {
@@ -263,6 +260,42 @@ public void valid_username_and_password() {
         
 
         
+    }
+
+    //======================Cities API for QTrip=================================================
+
+    @Given("Setup Base URl")
+    public void setup_base_u_rl() {
+        // Write code here that turns the phrase above into concrete actions
+        endpoint ="/api/v1/cities?q=beng";
+    }
+    @When("Send the Get request with endpoint")
+    public void send_the_get_request_with_endpoint() {
+        // Write code here that turns the phrase above into concrete actions
+        RequestSpecification request = createRequest();
+        response = request.header("Content-Type","application/json").get(BASE_URL+endpoint);
+    }
+    @Then("Validate Response Statucode")
+    public void validate_response_statucode() {
+        // Write code here that turns the phrase above into concrete actions
+        
+        int Statuscode = response.getStatusCode();
+        System.out.println(Statuscode);
+        Assert.assertEquals(200, Statuscode);
+    }
+    @Then("Validate Response body details")
+    public void validate_response_body_details() {
+        // Write code here that turns the phrase above into concrete action
+        jsonString = response.asString();
+        List<Map<String,String>> map = JsonPath.from(jsonString).get();
+        for(Map<String,String> data : map){
+            String Description= data.get("description");
+            String City = data.get("city");
+        
+        System.out.println("City is " + City + " and description is " + Description);
+
+        Assert.assertEquals("100+ Places", Description);
+        }
     }
 
 
