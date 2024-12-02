@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="User Registration" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-12-02T18:30:29" hostname="KALYANI" time="3.797">
+<testsuite name="User Registration" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-12-02T21:04:38" hostname="KALYANI" time="3.739">
   <properties/>
-  <testcase name="Successfull Registration" classname="User Registration" time="1.439"/>
-  <testcase name="Regisration With Existing User" classname="User Registration" time="1.22"/>
-  <testcase name="Regisration with Invalid User" classname="User Registration" time="1.137"/>
+  <testcase name="Successfull Registration" classname="User Registration" time="1.154"/>
+  <testcase name="Regisration With Existing User" classname="User Registration" time="1.327"/>
+  <testcase name="Regisration with Invalid User" classname="User Registration" time="1.258"/>
   <system-out><![CDATA[
-Scenario: Successfull Registration        # src/test/resources/Funtionaltest/QTripRegister.feature:7
+Scenario: Successfull Registration        # src/test/resources/Funtionaltest/QTripRegister.feature:8
   Given Valid Username and Password       # cucumberapi.stepDefinitions.Steps.valid_username_and_password()
   When The Post request send with endoint # cucumberapi.stepDefinitions.Steps.the_post_request_send_with_endoint()
 Email already exist
   Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 {"success":false,"message":"Email already exists"}
-io.restassured.internal.RestAssuredResponseImpl@2dac2e1b
+io.restassured.internal.RestAssuredResponseImpl@250d440
   And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
 
-Scenario: Regisration With Existing User  # src/test/resources/Funtionaltest/QTripRegister.feature:13
+Scenario: Regisration With Existing User  # src/test/resources/Funtionaltest/QTripRegister.feature:14
   Given User enter  Username and Password # cucumberapi.stepDefinitions.Steps.user_enter_username_and_password(io.cucumber.datatable.DataTable)
     | email                 | password  | confirmpassword |
     | kalyani2325@gmail.com | Test@2325 | Test@2325       |
@@ -23,10 +23,10 @@ Scenario: Regisration With Existing User  # src/test/resources/Funtionaltest/QTr
 Email already exist
   Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 {"success":false,"message":"Email already exists"}
-io.restassured.internal.RestAssuredResponseImpl@bb8ead8
+io.restassured.internal.RestAssuredResponseImpl@666618d6
   And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
 
-Scenario: Regisration with Invalid User   # src/test/resources/Funtionaltest/QTripRegister.feature:22
+Scenario: Regisration with Invalid User   # src/test/resources/Funtionaltest/QTripRegister.feature:23
   Given User enter  Username and Password # cucumberapi.stepDefinitions.Steps.user_enter_username_and_password(io.cucumber.datatable.DataTable)
     | email                 | password | confirmpassword |
     | kalyani2325@gmail.com | Test@232 | Test@232        |
@@ -34,7 +34,7 @@ Scenario: Regisration with Invalid User   # src/test/resources/Funtionaltest/QTr
 Email already exist
   Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 {"success":false,"message":"Email already exists"}
-io.restassured.internal.RestAssuredResponseImpl@d108406
+io.restassured.internal.RestAssuredResponseImpl@3b0d3a63
   And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

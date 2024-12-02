@@ -1,5 +1,5 @@
 
-fScenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:4
+fScenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:5
 c  Given Setup Base URl                      # cucumberapi.stepDefinitions.Steps.setup_base_u_rl()
 v  When Send the Get request with endpoint   # cucumberapi.stepDefinitions.Steps.send_the_get_request_with_endpoint()
 200
@@ -7,33 +7,37 @@
 2City is Bengaluru and description is 100+ Places
 r  And Validate Response body details        # cucumberapi.stepDefinitions.Steps.validate_response_body_details()
 
-fScenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:4
+fScenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:5
 p  Given Enter Username and Password          # cucumberapi.stepDefinitions.Steps.enter_username_and_password()
 z  When Send Post Request with Valid Endpoint # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
+é{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY","id":"vBI3fX1uJHF0OQ7z"}}
+201
 ‚  Then Validate Statucode Should be 201      # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-©eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpdmEyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE2NDIyOSwiZXhwIjoxNzMzMTg1ODI5fQ.3ePD4ZiRu_nGXekcP-HnZcwSXlW96R-_mVM0K26eEeE
+­eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY
 j  And Get the Token details                  # cucumberapi.stepDefinitions.Steps.get_the_token_details()
 
-kScenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:10
+kScenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:11
    Given Enter Unregistered Username and Password # cucumberapi.stepDefinitions.Steps.enter_unregistered_username_and_password(io.cucumber.datatable.DataTable)
 $    | email            | password |
 $    | kal235@gmail.com | Test@123 |
 ~  When Send Post Request with Valid Endpoint     # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
-†  Then Validate Statucode Should be 404          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-4{"success":false,"message":"email does not exist"}
-false
+é{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+201
+†  Then Validate Statucode Should be 201          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
+é{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+true
 o  And Validate Response Body                     # cucumberapi.stepDefinitions.Steps.validate_response_body()
 
-fScenario: Successfull Registration        # src/test/resources/Funtionaltest/QTripRegister.feature:7
+fScenario: Successfull Registration        # src/test/resources/Funtionaltest/QTripRegister.feature:8
 m  Given Valid Username and Password       # cucumberapi.stepDefinitions.Steps.valid_username_and_password()
 t  When The Post request send with endoint # cucumberapi.stepDefinitions.Steps.the_post_request_send_with_endoint()
 Email already exist
 e  Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 4{"success":false,"message":"Email already exists"}
-:io.restassured.internal.RestAssuredResponseImpl@2dac2e1b
+9io.restassured.internal.RestAssuredResponseImpl@250d440
 o  And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
 
-gScenario: Regisration With Existing User  # src/test/resources/Funtionaltest/QTripRegister.feature:13
+gScenario: Regisration With Existing User  # src/test/resources/Funtionaltest/QTripRegister.feature:14
 ‘  Given User enter  Username and Password # cucumberapi.stepDefinitions.Steps.user_enter_username_and_password(io.cucumber.datatable.DataTable)
 <    | email                 | password  | confirmpassword |
 <    | kalyani2325@gmail.com | Test@2325 | Test@2325       |
@@ -42,10 +46,10 @@
 Email already exist
 e  Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 4{"success":false,"message":"Email already exists"}
-9io.restassured.internal.RestAssuredResponseImpl@bb8ead8
+:io.restassured.internal.RestAssuredResponseImpl@666618d6
 o  And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
 	
-	gScenario: Regisration with Invalid User   # src/test/resources/Funtionaltest/QTripRegister.feature:22
+	gScenario: Regisration with Invalid User   # src/test/resources/Funtionaltest/QTripRegister.feature:23
 	‘  Given User enter  Username and Password # cucumberapi.stepDefinitions.Steps.user_enter_username_and_password(io.cucumber.datatable.DataTable)
 	;    | email                 | password | confirmpassword |
 	;    | kalyani2325@gmail.com | Test@232 | Test@232        |
@@ -53,5 +57,35 @@
 	Email already exist
 	e  Then Validate Statuscode                # cucumberapi.stepDefinitions.Steps.validate_statuscode()
 	4{"success":false,"message":"Email already exists"}
-	9io.restassured.internal.RestAssuredResponseImpl@d108406
+	:io.restassured.internal.RestAssuredResponseImpl@3b0d3a63
 	o  And Validate Response Body values       # cucumberapi.stepDefinitions.Steps.validate_response_body_values()
+
+
+
+nScenario: Test the Reservation Functionality   # src/test/resources/Funtionaltest/QTripReservation.feature:7
+
+}  Given Enter Required details for Reservation # cucumberapi.stepDefinitions.Steps.enter_required_details_for_reservation()
+
+|  When Send Post Request with Valid Endpoint   # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
+
+é{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4NiwiZXhwIjoxNzMzMTk1MDg2fQ.2UcK31zLzHhtQvRqRD81c-HzIhd6t8AFe3WbIJhX8wQ","id":"vBI3fX1uJHF0OQ7z"}}
+
+201
+
+„  Then Validate Statucode Should be 201        # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
+
+{
+
+    "success": true,
+
+    "data": {
+
+À        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4NiwiZXhwIjoxNzMzMTk1MDg2fQ.2UcK31zLzHhtQvRqRD81c-HzIhd6t8AFe3WbIJhX8wQ",
+
+!        "id": "vBI3fX1uJHF0OQ7z"
+
+    }
+
+}
+
+y  And Validate Successfull Response body       # cucumberapi.stepDefinitions.Steps.validate_successfull_response_body()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test Cities displayed on Search" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-02T18:30:21" hostname="KALYANI" time="3.692">
+<testsuite name="Test Cities displayed on Search" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-02T21:04:29" hostname="KALYANI" time="3.523">
   <properties/>
-  <testcase name="Test correct cities are displayed" classname="Test Cities displayed on Search" time="3.692"/>
+  <testcase name="Test correct cities are displayed" classname="Test Cities displayed on Search" time="3.523"/>
   <system-out><![CDATA[
-Scenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:4
+Scenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:5
   Given Setup Base URl                      # cucumberapi.stepDefinitions.Steps.setup_base_u_rl()
   When Send the Get request with endpoint   # cucumberapi.stepDefinitions.Steps.send_the_get_request_with_endpoint()
 200

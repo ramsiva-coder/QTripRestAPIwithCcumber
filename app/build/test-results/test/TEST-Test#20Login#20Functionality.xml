@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test Login Functionality" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-02T18:30:25" hostname="KALYANI" time="4.471">
+<testsuite name="Test Login Functionality" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-02T21:04:33" hostname="KALYANI" time="4.828">
   <properties/>
-  <testcase name="Successfull Login" classname="Test Login Functionality" time="1.992"/>
-  <testcase name="Login with Unregistered User" classname="Test Login Functionality" time="2.479"/>
+  <testcase name="Successfull Login" classname="Test Login Functionality" time="2.202"/>
+  <testcase name="Login with Unregistered User" classname="Test Login Functionality" time="2.626"/>
   <system-out><![CDATA[
-Scenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:4
+Scenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:5
   Given Enter Username and Password          # cucumberapi.stepDefinitions.Steps.enter_username_and_password()
   When Send Post Request with Valid Endpoint # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY","id":"vBI3fX1uJHF0OQ7z"}}
+201
   Then Validate Statucode Should be 201      # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpdmEyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE2NDIyOSwiZXhwIjoxNzMzMTg1ODI5fQ.3ePD4ZiRu_nGXekcP-HnZcwSXlW96R-_mVM0K26eEeE
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY
   And Get the Token details                  # cucumberapi.stepDefinitions.Steps.get_the_token_details()
 
-Scenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:10
+Scenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:11
   Given Enter Unregistered Username and Password # cucumberapi.stepDefinitions.Steps.enter_unregistered_username_and_password(io.cucumber.datatable.DataTable)
     | email            | password |
     | kal235@gmail.com | Test@123 |
   When Send Post Request with Valid Endpoint     # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
-  Then Validate Statucode Should be 404          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-{"success":false,"message":"email does not exist"}
-false
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+201
+  Then Validate Statucode Should be 201          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+true
   And Validate Response Body                     # cucumberapi.stepDefinitions.Steps.validate_response_body()
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

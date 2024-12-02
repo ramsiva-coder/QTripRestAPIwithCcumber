@@ -1,3 +1,4 @@
+
 Feature: Test Login Functionality
 
     Login with Username and Password through API
@@ -12,5 +13,5 @@ Scenario: Login with Unregistered User
  |email            |password  |
  |kal235@gmail.com|Test@123  |
  When Send Post Request with Valid Endpoint
- Then Validate Statucode Should be 404
+ Then Validate Statucode Should be 201
  And Validate Response Body

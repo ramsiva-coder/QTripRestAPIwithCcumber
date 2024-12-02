@@ -1,5 +1,6 @@
 package cucumberapi.stepDefinitions;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,8 +18,8 @@ import io.restassured.specification.RequestSpecification;
 
 public class Steps {
     private static final String USER_ID = "87bfa745-0e24-41e4-9201-a49047ce042d";
-    private static final String USERNAME = "siva2325@gmail.com";
-    private static final String PASSWORD = "Test@@123";
+    private static final String USERNAME = "kalyani2325@gmail.com";
+    private static final String PASSWORD = "Test@2325";
     private static final String BASE_URL = "https://content-qtripdynamic-qa-backend.azurewebsites.net";
 
     private static String jsonString;
@@ -40,10 +41,10 @@ public class Steps {
     @Given("Iam an Authorised user")
     public void iam_an_authorised_user() {
         RequestSpecification request = createRequest();
-        response = request.body("{ \"userName\":\"" + USERNAME + "\", \"password\":\"" + PASSWORD + "\"}")
-                          .post("/Account/v1/GenerateToken");
-
-        Assert.assertEquals(200, response.getStatusCode());
+        response = request.body("{ \"email\":\"" + USERNAME + "\", \"password\":\"" + PASSWORD + "\"}")
+                          .post(BASE_URL+"/api/v1/login");
+        System.out.println(response.getBody());
+        Assert.assertEquals(201, response.getStatusCode());
         System.out.println(response.getStatusCode());
         jsonString = response.asString();
         System.out.println(jsonString);
@@ -212,9 +213,16 @@ public void valid_username_and_password() {
     @When("Send Post Request with Valid Endpoint")
     public void send_post_request_with_valid_endpoint() {
         // Write code here that turns the phrase above into concrete actions
+        endpoint = "/api/v1/login";
         RequestSpecification request = createRequest();
-        endpoint="/api/v1/login";
+        jsonobject = new JSONObject();
+        jsonobject.put("email", USERNAME);
+        jsonobject.put("password",PASSWORD);
         response = request.body(jsonobject.toString()).post(BASE_URL+endpoint);
+        
+        
+        
+
          
         
         
@@ -223,6 +231,8 @@ public void valid_username_and_password() {
     public void validate_statucode_should_be(Integer actual_statuscode) {
         // Write code here that turns the phrase above into concrete actions
         jsonString = response.asString();
+        System.out.println(jsonString);
+        System.out.println(response.getStatusCode());
         Assert.assertEquals(actual_statuscode.intValue(), response.getStatusCode());
         
     }
@@ -256,7 +266,7 @@ public void valid_username_and_password() {
         jsonString = response.asString();
         System.out.println(jsonString);
         System.out.println(JsonPath.from(jsonString).getString("success"));
-        Assert.assertEquals(404, response.getStatusCode());
+        Assert.assertEquals(201, response.getStatusCode());
         
 
         
@@ -297,6 +307,35 @@ public void valid_username_and_password() {
         Assert.assertEquals("100+ Places", Description);
         }
     }
+//=========================QTrip Reservation API========================================
+
+@Given("Enter Required details for Reservation")
+public void enter_required_details_for_reservation() {
+    // Write code here that turns the phrase above into concrete actions
+    endpoint="/api/v1/reservations/new";
+    RequestSpecification request = createRequest().
+    header("Authorization","Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InMxMTEyMzVAZ21haWwuY29tIiwiaWF0IjoxNzMzMTcwNjI5LCJleHAiOjE3MzMxOTIyMjl9.wCY1qpv6ukCfaztnOp4AOS9l3hvVYqvPPqXy-CJ-4lI");
+    
+    Map<String,String> data = new HashMap<>();
+    
+      data.put("userId","szhd1Ip2jARX9wsh");
+        data.put("name","TestUser");
+        data.put("date","2026-09-09");
+        data.put("person","1");
+        data.put("adventure","2447910730");
+        jsonobject = new JSONObject(data);
+        response = request.body(jsonobject.toString()).post(BASE_URL+endpoint);
+        
+     
+    
+}
+@Then("Validate Successfull Response body")
+public void validate_successfull_response_body() {
+    // Write code here that turns the phrase above into concrete actions
+   System.out.println(response.getBody().asPrettyString());
+   Assert.assertTrue(JsonPath.from(jsonString).getBoolean("success"));
+   
+}
 
 
 }
