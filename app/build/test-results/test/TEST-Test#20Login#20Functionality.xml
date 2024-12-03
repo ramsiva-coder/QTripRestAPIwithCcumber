@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test Login Functionality" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-02T21:04:33" hostname="KALYANI" time="4.828">
+<testsuite name="Test Login Functionality" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-03T18:18:35" hostname="KALYANI" time="5.36">
   <properties/>
-  <testcase name="Successfull Login" classname="Test Login Functionality" time="2.202"/>
-  <testcase name="Login with Unregistered User" classname="Test Login Functionality" time="2.626"/>
+  <testcase name="Successfull Login" classname="Test Login Functionality" time="2.66"/>
+  <testcase name="Login with Unregistered User" classname="Test Login Functionality" time="2.695"/>
   <system-out><![CDATA[
 Scenario: Successfull Login                  # src/test/resources/Funtionaltest/QTripLogin.feature:5
   Given Enter Username and Password          # cucumberapi.stepDefinitions.Steps.enter_username_and_password()
   When Send Post Request with Valid Endpoint # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
-{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY","id":"vBI3fX1uJHF0OQ7z"}}
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0OTkxNiwiZXhwIjoxNzMzMjcxNTE2fQ.68Ly_6Yw7RwYvBBfJ2wBGk3G3CMHYSSMQdgN3P3rNBM","id":"vBI3fX1uJHF0OQ7z"}}
 201
   Then Validate Statucode Should be 201      # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ3NywiZXhwIjoxNzMzMTk1MDc3fQ.KFa4CragHTM1WQejuykokSA-BrdWwvXOKd569MIpgCY
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0OTkxNiwiZXhwIjoxNzMzMjcxNTE2fQ.68Ly_6Yw7RwYvBBfJ2wBGk3G3CMHYSSMQdgN3P3rNBM
   And Get the Token details                  # cucumberapi.stepDefinitions.Steps.get_the_token_details()
 
 Scenario: Login with Unregistered User           # src/test/resources/Funtionaltest/QTripLogin.feature:11
@@ -18,10 +18,10 @@ Scenario: Login with Unregistered User           # src/test/resources/Funtionalt
     | email            | password |
     | kal235@gmail.com | Test@123 |
   When Send Post Request with Valid Endpoint     # cucumberapi.stepDefinitions.Steps.send_post_request_with_valid_endpoint()
-{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0OTkyMCwiZXhwIjoxNzMzMjcxNTIwfQ._hB6TuftkH8X5LqUrEaQjiqwcA_RvhSc5jsGbuQpu8g","id":"vBI3fX1uJHF0OQ7z"}}
 201
   Then Validate Statucode Should be 201          # cucumberapi.stepDefinitions.Steps.validate_statucode_should_be(java.lang.Integer)
-{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzE3MzQ4MCwiZXhwIjoxNzMzMTk1MDgwfQ.jwYl6L5kAfvQTHmr0qeqQ_k-w73oIehzP5-ytD1w2_E","id":"vBI3fX1uJHF0OQ7z"}}
+{"success":true,"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHlhbmkyMzI1QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0OTkyMCwiZXhwIjoxNzMzMjcxNTIwfQ._hB6TuftkH8X5LqUrEaQjiqwcA_RvhSc5jsGbuQpu8g","id":"vBI3fX1uJHF0OQ7z"}}
 true
   And Validate Response Body                     # cucumberapi.stepDefinitions.Steps.validate_response_body()
 ]]></system-out>

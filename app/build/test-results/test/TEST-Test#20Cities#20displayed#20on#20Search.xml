@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test Cities displayed on Search" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-02T21:04:29" hostname="KALYANI" time="3.523">
+<testsuite name="Test Cities displayed on Search" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-03T18:18:29" hostname="KALYANI" time="6.514">
   <properties/>
-  <testcase name="Test correct cities are displayed" classname="Test Cities displayed on Search" time="3.523"/>
+  <testcase name="Test correct cities are displayed" classname="Test Cities displayed on Search" time="6.514"/>
   <system-out><![CDATA[
 Scenario: Test correct cities are displayed # src/test/resources/Funtionaltest/QTripCities.feature:5
   Given Setup Base URl                      # cucumberapi.stepDefinitions.Steps.setup_base_u_rl()
@@ -11,5 +11,8 @@ Scenario: Test correct cities are displayed # src/test/resources/Funtionaltest/Q
 City is Bengaluru and description is 100+ Places
   And Validate Response body details        # cucumberapi.stepDefinitions.Steps.validate_response_body_details()
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
 </testsuite>

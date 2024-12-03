@@ -41,6 +41,15 @@ implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.20.1'
 testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.20.1'
 // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
 //implementation group: 'io.cucumber', name: 'cucumber-core', version: '7.20.1'
+// https://mvnrepository.com/artifact/org.testng/testng
+ testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+ // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.27.0'
+
+
+
 
 
 
@@ -52,10 +61,31 @@ application {
     // Define the main class for the application.
     mainClass = 'cucumberapi.App'
 }
+// Task for running Cucumber tests
+task cucumberTests(type: Test) {
+    group = "verification"
+    description = "Run Cucumber API tests"
+    useJUnit()
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    include '**/cucumberapi/runner/*.class'
+}
+
+// Task for running TestNG tests
+task testNgTests(type: Test) {
+    group = "verification"
+    description = "Run TestNG UI tests"
+    useTestNG()
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    include '**/QTripUITestwithTestNg/*.class'
+}
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
-    useJUnit()
+    // useTestNG()
+    // useJUnit()
+     dependsOn cucumberTests, testNgTests
 }
 
 tasks.test {
