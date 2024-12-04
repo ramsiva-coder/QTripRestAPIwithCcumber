@@ -213,7 +213,7 @@ DEFAULT_JVM_OPTS=""
 
 set -- \
         -classpath "$CLASSPATH" \
-        QTripUITestwithTestNg.App \
+        cucumberapi.App \
         "$@"
 
 # Stop when "xargs" is not available.

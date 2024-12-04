@@ -1,4 +1,62 @@
 {
+    // Specify the Java runtime for this project
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-17",
+  
+    // Project-specific file associations
+    "files.associations": {
+      "*.java": "java"
+    },
+  
+    // Use JDK 17 for Gradle
+    "java.import.gradle.java.home": "C:\\Program Files\\Java\\jdk-17",
+  
+    // Enable Gradle and Maven features for this project
+    "java.import.gradle.enabled": true,
+    "java.maven.downloadSources": true,
+  
+    // Enable parameter hints and code suggestions
+    "editor.parameterHints.enabled": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+  
+    // Automatically save files when focus changes
+    "files.autoSave": "onFocusChange",
+  
+    // Exclude build-related files and folders
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/build": true,
+      "**/dist": true,
+      "**/.git": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/build": true,
+      "**/dist": true,
+      "**/.git": true
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/build/**": true,
+      "**/dist/**": true,
+      "**/.git/**": true
+    },
+  
+    // Format Java files using Red Hat's Java formatter
+    "[java]": {
+      "editor.defaultFormatter": "Oracle.oracle-java"
+    },
+  
+    // Enable Java references and implementations lenses
+    "java.referencesCodeLens.enabled": true,
+    "java.implementationsCodeLens.enabled": true,
+  
+    // Suppress classpath errors for incomplete dependencies
+    "java.errors.incompleteClasspath.severity": "ignore",
     "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive"
-}
+    "java.format.settings.url": ".vscode/java-formatter.xml"
+  }
+  
